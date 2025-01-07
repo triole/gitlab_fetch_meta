@@ -17,14 +17,14 @@ var (
 )
 
 var CLI struct {
-	GitlabEP         string   `help:"file to process, required positional arg" arg:"" optional:""`
-	MetadataFilename []string `help:"file names of additional metadata to fetch" short:"a" default:"public.toml"`
-	UA               string   `help:"requests user agent" short:"u" default:"Mozilla/5.0 (X11; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0"`
-	LogFile          string   `help:"log file" default:"/dev/stdout"`
-	LogLevel         string   `help:"log level" default:"info" enum:"trace,debug,info,error"`
-	LogNoColors      bool     `help:"disable output colours, print plain text"`
-	LogJSON          bool     `help:"enable json log, instead of text one"`
-	VersionFlag      bool     `help:"display version" short:"V"`
+	GitlabEP      string   `help:"file to process, required positional arg" arg:"" optional:""`
+	MetaFilenames []string `help:"file names of additional metadata to fetch" short:"a" sep:"," default:"public.toml"`
+	UA            string   `help:"requests user agent" short:"u" default:"Mozilla/5.0 (X11; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0"`
+	LogFile       string   `help:"log file" default:"/dev/stdout"`
+	LogLevel      string   `help:"log level" default:"info" enum:"trace,debug,info,error"`
+	LogNoColors   bool     `help:"disable output colours, print plain text"`
+	LogJSON       bool     `help:"enable json log, instead of text one"`
+	VersionFlag   bool     `help:"display version" short:"V"`
 }
 
 func parseArgs() {
